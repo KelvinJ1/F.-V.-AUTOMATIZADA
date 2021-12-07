@@ -1,4 +1,4 @@
-LIST    P=16F84A,    ; usar PIC 16F84A
+LIST    P=16F84A,   
 #include <p16f84A.inc>
 
  __CONFIG _CP_OFF & _WDT_OFF & _PWRTE_ON & _XT_OSC
@@ -13,13 +13,12 @@ PORTA    EQU    05
 PORTB    EQU    06
  
 ORG        0
-BSF        STATUS,5   ;Paso al banco 1
-MOVLW      B'11111111'    ; Defino puerto b como entrada
+BSF        STATUS,5   
+MOVLW      B'11111111'    
 MOVWF      TRISB
-MOVLW	   B'00000'	;Defino puerto a como salida
+MOVLW	   B'00000'	
 MOVWF	   TRISA
-BCF        STATUS,5    ; Paso al banco 0
-
+BCF        STATUS,5    
 BTN_INICIO ; etiqueta
 	CLRF PORTA
 	BTFSS PORTB,0
